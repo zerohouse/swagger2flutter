@@ -1,9 +1,11 @@
+
 import 'package:build/build.dart';
-import 'package:swagger_dart_code_generator/src/extensions/file_name_extensions.dart';
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
-import 'package:swagger_dart_code_generator/src/swagger_code_generator.dart';
-import 'package:universal_io/io.dart';
 import 'package:dart_style/dart_style.dart';
+import 'package:universal_io/io.dart';
+
+import 'src/extensions/file_name_extensions.dart';
+import 'src/models/generator_options.dart';
+import 'src/swagger_code_generator.dart';
 
 ///Returns instance of SwaggerDartCodeGenerator
 SwaggerDartCodeGenerator swaggerCodeBuilder(BuilderOptions options) =>
@@ -33,8 +35,12 @@ Map<String, List<String>> _generateExtensions(GeneratorOptions options) {
   });
 
   ///Register additional outputs in first input
-  result[filesList.first.path]!.add('${options.outputFolder}$_indexFileName');
-  result[filesList.first.path]!.add('${options.outputFolder}$_mappingFileName');
+
+  if (filesList.isNotEmpty) {
+    result[filesList.first.path]!.add('${options.outputFolder}$_indexFileName');
+    result[filesList.first.path]!
+        .add('${options.outputFolder}$_mappingFileName');
+  }
 
   return result;
 }
@@ -61,7 +67,8 @@ class SwaggerDartCodeGenerator implements Builder {
         buildStep.inputId.pathSegments.last.replaceAll('-', '_');
     final fileNameWithoutExtension = fileNameWithExtension.split('.').first;
 
-    final contents = await buildStep.readAsString(buildStep.inputId);
+    final contents = (await buildStep.readAsString(buildStep.inputId))
+        .replaceAll(RegExp('«.+?»'), '');
 
     final codeGenerator = SwaggerCodeGenerator();
 

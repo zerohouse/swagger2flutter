@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_models_generator.dart';
-import 'package:swagger_dart_code_generator/src/extensions/string_extension.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request_parameter.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/responses/swagger_response.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_path.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_root.dart';
-import 'package:recase/recase.dart';
-import 'package:swagger_dart_code_generator/src/exception_words.dart';
 import 'package:collection/collection.dart';
+import 'package:recase/recase.dart';
+import 'package:swagger_to_flutter/src/code_generators/swagger_models_generator.dart';
+import 'package:swagger_to_flutter/src/exception_words.dart';
+import 'package:swagger_to_flutter/src/extensions/string_extension.dart';
+import 'package:swagger_to_flutter/src/models/generator_options.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request_parameter.dart';
+import 'package:swagger_to_flutter/src/swagger_models/responses/swagger_response.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_path.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_root.dart';
 
 abstract class SwaggerRequestsGenerator {
   static const String defaultBodyParameter = 'Object';
@@ -410,7 +410,7 @@ $allMethodsContent
           '\n  @FactoryConverter(request: FormUrlEncodedConverter.requestFactory)';
     }
 
-    if (returnType.isNotEmpty && returnType != 'num') {
+    if (returnType.isNotEmpty && returnType != 'num' && returnType != 'bool'  && returnType != 'int') {
       returnType = returnType.pascalCase;
     }
 

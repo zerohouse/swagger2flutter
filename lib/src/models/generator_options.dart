@@ -4,8 +4,11 @@ part 'generator_options.g2.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake, anyMap: true)
 class GeneratorOptions {
+
+
   /// Instantiate generator options.
   GeneratorOptions({
+    this.dateAsTimeStamp = true,
     this.withBaseUrl = true,
     this.withConverter = true,
     this.ignoreHeaders = false,
@@ -14,19 +17,22 @@ class GeneratorOptions {
     this.defaultValuesMap = const <DefaultValueMap>[],
     this.defaultHeaderValuesMap = const <DefaultHeaderValueMap>[],
     this.responseOverrideValueMap = const <ResponseOverrideValueMap>[],
-    required this.inputFolder,
-    required this.outputFolder,
+    this.inputFolder = 'swaggers/',
+    this.outputFolder = 'lib/generated_code/',
     this.enumsCaseSensitive = true,
     this.usePathForRequestNames = false,
     this.useRequiredAttributeForHeaders = true,
     this.useInheritance = true,
     this.includeIfNull,
-    this.modelPostfix = '',
+    this.modelPostfix = 'Dto',
   });
 
   /// Build options from a JSON map.
   factory GeneratorOptions.fromJson(Map<String, dynamic> json) =>
       _$GeneratorOptionsFromJson(json);
+
+  @JsonKey(defaultValue: true)
+  final bool dateAsTimeStamp;
 
   @JsonKey(defaultValue: true)
   final bool withBaseUrl;

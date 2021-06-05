@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_enums_generator.dart';
+
+import 'package:swagger_to_flutter/src/code_generators/swagger_enums_generator.dart';
 
 class SwaggerEnumsGeneratorV2 extends SwaggerEnumsGenerator {
   @override

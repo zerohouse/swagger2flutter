@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
 import 'package:recase/recase.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/v2/swagger_enums_generator_v2.dart';
-import 'package:swagger_dart_code_generator/src/extensions/string_extension.dart';
-import 'package:swagger_dart_code_generator/src/exception_words.dart';
+import 'package:swagger_to_flutter/src/code_generators/v2/swagger_enums_generator_v2.dart';
+import 'package:swagger_to_flutter/src/exception_words.dart';
+import 'package:swagger_to_flutter/src/extensions/string_extension.dart';
+import 'package:swagger_to_flutter/src/models/generator_options.dart';
 
 abstract class SwaggerModelsGenerator {
   static const List<String> keyClasses = ['Response', 'Request'];
@@ -20,14 +20,19 @@ abstract class SwaggerModelsGenerator {
   ];
 
   String generate(String dartCode, String fileName, GeneratorOptions options);
+
   String generateResponses(
       String dartCode, String fileName, GeneratorOptions options);
 
   String generateRequestBodies(
       String dartCode, String fileName, GeneratorOptions options);
+
   Map<String, dynamic> getModelProperties(Map<String, dynamic> modelMap);
+
   String getExtendsString(Map<String, dynamic> map);
+
   List<String> getAllEnumNames(String swaggerFile);
+
   List<String> getAllListEnumNames(String swaggerFile);
 
   String generateModelClassContent(
@@ -565,6 +570,8 @@ abstract class SwaggerModelsGenerator {
           (DefaultValueMap element) => element.typeName == typeName);
       jsonKeyContent +=
           ', defaultValue: ${generateDefaultValueFromMap(defaultValue)})\n';
+    } else if (val['format'] == 'date-time' && options.dateAsTimeStamp) {
+      jsonKeyContent += ',fromJson: _fromJson, toJson: _toJson)';
     } else {
       jsonKeyContent += ')\n';
     }
@@ -874,7 +881,25 @@ List<enums.$neededName> ${neededName.camelCase}ListFromJson(
     final copyWithMethod =
         generateCopyWithContent(generatedProperties, validatedClassName);
 
-    final generatedClass = '''
+    final generatedClass = (options.dateAsTimeStamp &&
+            properties.entries.any((element) =>
+                ((element.value as Map<String, dynamic>)['format'] ==
+                    'date-time')))
+        ? '''
+@JsonSerializable(explicitToJson: true)
+class $validatedClassName $extendsString{
+\t$validatedClassName($generatedConstructorProperties);\n
+\tfactory $validatedClassName.fromJson(Map<String, dynamic> json) => _\$${validatedClassName}FromJson(json);\n
+$generatedProperties
+\tstatic DateTime? _fromJson(int? int) => int == null ? null : DateTime.fromMillisecondsSinceEpoch(int);
+\tstatic int? _toJson(DateTime? time) => time?.millisecondsSinceEpoch;
+\tstatic const fromJsonFactory = _\$${validatedClassName}FromJson;
+\tstatic const toJsonFactory = _\$${validatedClassName}ToJson;
+\tMap<String, dynamic> toJson() => _\$${validatedClassName}ToJson(this);
+}
+$copyWithMethod
+'''
+        : '''
 @JsonSerializable(explicitToJson: true)
 class $validatedClassName $extendsString{
 \t$validatedClassName($generatedConstructorProperties);\n

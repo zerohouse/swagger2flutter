@@ -1,4 +1,4 @@
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_additions_generator.dart';
+import 'package:swagger_to_flutter/src/code_generators/swagger_additions_generator.dart';
 import 'package:test/test.dart';
 
 void main() {

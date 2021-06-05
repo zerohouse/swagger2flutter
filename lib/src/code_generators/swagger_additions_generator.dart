@@ -1,6 +1,6 @@
-import 'package:swagger_dart_code_generator/src/definitions.dart';
 import 'package:recase/recase.dart';
-import 'package:swagger_dart_code_generator/src/extensions/file_name_extensions.dart';
+import 'package:swagger_to_flutter/src/definitions.dart';
+import 'package:swagger_to_flutter/src/extensions/file_name_extensions.dart';
 
 ///Generates index file content, converter and additional methods
 class SwaggerAdditionsGenerator {

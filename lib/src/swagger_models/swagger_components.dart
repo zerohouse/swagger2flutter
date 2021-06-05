@@ -1,4 +1,4 @@
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request_parameter.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request_parameter.dart';
 
 class SwaggerComponents {
   SwaggerComponents({this.parameters = const []});

@@ -1,5 +1,5 @@
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_converter_generator.dart';
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
+import 'package:swagger_to_flutter/src/code_generators/swagger_converter_generator.dart';
+import 'package:swagger_to_flutter/src/models/generator_options.dart';
 import 'package:test/test.dart';
 
 import '../converter_generator_definitions.dart';

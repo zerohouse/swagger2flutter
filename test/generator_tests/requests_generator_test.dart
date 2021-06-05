@@ -1,13 +1,13 @@
-import 'package:swagger_dart_code_generator/src/code_generators/v3/swagger_requests_generator_v3.dart';
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/parameter_item.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_parameter_schema.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request_items.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request_parameter.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/responses/swagger_response.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_path.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_root.dart';
+import 'package:swagger_to_flutter/src/code_generators/v3/swagger_requests_generator_v3.dart';
+import 'package:swagger_to_flutter/src/models/generator_options.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/parameter_item.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_parameter_schema.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request_items.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request_parameter.dart';
+import 'package:swagger_to_flutter/src/swagger_models/responses/swagger_response.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_path.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_root.dart';
 import 'package:test/test.dart';
 
 import '../code_examples.dart';

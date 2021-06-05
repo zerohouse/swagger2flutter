@@ -1,11 +1,11 @@
 targets:
-  swagger_dart_code_generator:swagger_dart_code_generator:
+  swagger_to_flutter:swagger_to_flutter:
     builders:
-      swagger_dart_code_generator:
+      swagger_to_flutter:
         enabled: True
 builders:
-  swagger_dart_code_generator:
-    import: 'package:swagger_dart_code_generator/swagger_dart_code_generator.dart'
+  swagger_to_flutter:
+    import: 'package:swagger_to_flutter/sagger_to_flutter.dart'
     builder_factories: ['swaggerCodeBuilder']
     build_extensions:
       '$lib$': ['.swagger.dart', '.models.dart', '.converter.dart']

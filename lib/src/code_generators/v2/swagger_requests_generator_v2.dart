@@ -1,13 +1,14 @@
 import 'dart:convert';
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_enums_generator.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_models_generator.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_requests_generator.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/v2/swagger_models_generator_v2.dart';
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request_parameter.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_path.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_root.dart';
+
+import 'package:swagger_to_flutter/src/code_generators/swagger_enums_generator.dart';
+import 'package:swagger_to_flutter/src/code_generators/swagger_models_generator.dart';
+import 'package:swagger_to_flutter/src/code_generators/swagger_requests_generator.dart';
+import 'package:swagger_to_flutter/src/code_generators/v2/swagger_models_generator_v2.dart';
+import 'package:swagger_to_flutter/src/models/generator_options.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request_parameter.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_path.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_root.dart';
 
 class SwaggerRequestsGeneratorV2 extends SwaggerRequestsGenerator {
   @override

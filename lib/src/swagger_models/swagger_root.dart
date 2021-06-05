@@ -1,9 +1,9 @@
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/requests/swagger_request_parameter.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_components.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_info.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_path.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/swagger_tag.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request.dart';
+import 'package:swagger_to_flutter/src/swagger_models/requests/swagger_request_parameter.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_components.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_info.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_path.dart';
+import 'package:swagger_to_flutter/src/swagger_models/swagger_tag.dart';
 
 class SwaggerRoot {
   SwaggerRoot(

@@ -1,5 +1,5 @@
-import 'package:swagger_dart_code_generator/src/swagger_models/responses/item_schema.dart';
-import 'package:swagger_dart_code_generator/src/swagger_models/responses/response_schema.dart';
+import 'package:swagger_to_flutter/src/swagger_models/responses/item_schema.dart';
+import 'package:swagger_to_flutter/src/swagger_models/responses/response_schema.dart';
 
 class SwaggerResponse {
   SwaggerResponse({

@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:swagger_dart_code_generator/src/extensions/file_name_extensions.dart';
+import 'package:swagger_to_flutter/src/extensions/file_name_extensions.dart';
 
 void main() {
   group('Additions generator tests', () {

@@ -1,4 +1,4 @@
-import 'package:swagger_dart_code_generator/src/swagger_models/responses/item_schema.dart';
+import 'package:swagger_to_flutter/src/swagger_models/responses/item_schema.dart';
 
 import '../responses/swagger_response.dart';
 import 'swagger_request_parameter.dart';

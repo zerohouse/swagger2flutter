@@ -1,7 +1,7 @@
-import 'package:swagger_dart_code_generator/src/code_generators/swagger_models_generator.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/v2/swagger_models_generator_v2.dart';
-import 'package:swagger_dart_code_generator/src/code_generators/v3/swagger_models_generator_v3.dart';
-import 'package:swagger_dart_code_generator/src/models/generator_options.dart';
+import 'package:swagger_to_flutter/src/code_generators/swagger_models_generator.dart';
+import 'package:swagger_to_flutter/src/code_generators/v2/swagger_models_generator_v2.dart';
+import 'package:swagger_to_flutter/src/code_generators/v3/swagger_models_generator_v3.dart';
+import 'package:swagger_to_flutter/src/models/generator_options.dart';
 import 'package:test/test.dart';
 import '../code_examples.dart';
 
